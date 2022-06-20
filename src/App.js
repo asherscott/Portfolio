@@ -31,7 +31,7 @@ function App() {
             <p>social media links</p>
           </div>
           <section>
-            <h3>Hey, I'm Asher</h3>
+            <h2>Hey, I'm Asher</h2>
             <h1>Software Engineer</h1>
             <p>
               I am a full stack software engineer trained in JavaScript, React,
@@ -64,6 +64,7 @@ function App() {
         </aside>
 
         <article>
+          <h3>Technical Projects</h3>
           <RenderSection
             data={{
               title: "Project 1",
@@ -76,62 +77,70 @@ function App() {
               listItems: ["item 1", "item 2", "item 3", "item 4"],
             }}
           />
-          <section>
-            <h2>Project 2</h2>
-            <div>
-              <span>Github</span>|<span>Website</span>|<span>Demo</span>
-            </div>
-            <p>description</p>
-            <ul>
-              <li>Point 1</li>
-              <li>Point 2</li>
-              <li>Point 3</li>
-              <li>Point 4</li>
-            </ul>
-          </section>
-          <section>
-            <h2>Project 3</h2>
-            <div>
-              <span>Github</span>|<span>Website</span>|<span>Demo</span>
-            </div>
-            <p>description</p>
-            <ul>
-              <li>Point 1</li>
-              <li>Point 2</li>
-              <li>Point 3</li>
-              <li>Point 4</li>
-            </ul>
-          </section>
+          <RenderSection
+            data={{
+              title: "Project 1",
+              links: {
+                github: "github",
+                website: "website",
+                demo: "demo",
+              },
+              description: "description",
+              listItems: ["item 1", "item 2", "item 3", "item 4"],
+            }}
+          />
+          <RenderSection
+            data={{
+              title: "Project 1",
+              links: {
+                github: "github",
+                website: "website",
+                demo: "demo",
+              },
+              description: "description",
+              listItems: ["item 1", "item 2", "item 3", "item 4"],
+            }}
+          />
         </article>
 
         <article>
-          <section>
-            <h2>Experience 1</h2>
-            <p>description</p>
-            <ul>
-              <li>Point 1</li>
-              <li>Point 2</li>
-            </ul>
-          </section>
-          <section>
-            <h2>Experience 2</h2>
-            <p>description</p>
-            <ul>
-              <li>Point 1</li>
-              <li>Point 2</li>
-            </ul>
-          </section>
+          <h3>Experience</h3>
+
+          <RenderSection
+            data={{
+              title: "Experience 1",
+              description: "description",
+              date: "02/2021 - 02/2022",
+              listItems: ["item 1", "item 2"],
+            }}
+          />
+          <RenderSection
+            data={{
+              title: "Experience 2",
+              description: "description",
+              date: "02/2021 - 02/2022",
+              listItems: ["item 1", "item 2"],
+            }}
+          />
         </article>
 
         <article>
-          <section>
-            <h2>Education 1</h2>
-            <p>description</p>
-          </section>
-          <section>
-            <h2>Education 2</h2>
-            <p>description</p>
-          </section>
+          <h3>Education</h3>
+
+          <RenderSection
+            data={{
+              title: "Education 1",
+              description: "description",
+              date: "02/2021 - 02/2022",
+            }}
+          />
+          <RenderSection
+            data={{
+              title: "Education 2",
+              description: "description",
+              date: "02/2021 - 02/2022",
+            }}
+          />
         </article>
       </main>
 

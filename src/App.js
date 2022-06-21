@@ -12,9 +12,6 @@ function App() {
       <nav>
         <ul className="nav-ul">
           <li>
-            <a>Home</a>
-          </li>
-          <li>
             <a href="#projects" onClick={() => setShowProjects(true)}>
               Projects
             </a>
@@ -36,7 +33,7 @@ function App() {
       </nav>
 
       <main>
-        <header>
+        <header className="large-header">
           <div className="profile-pic">
             <img src="./profile-pic.png" />
             <span>social media links</span>
@@ -54,6 +51,26 @@ function App() {
               thinking.
             </p>
           </section>
+        </header>
+
+        <header className="small-header">
+          <section className="main-section">
+            <div className="profile-pic">
+              <img src="./profile-pic.png" />
+            </div>
+            <div className="small-title">
+              <h2>Hey, I'm Asher.</h2>
+              <h1>Software Engineer</h1>
+            </div>
+          </section>
+
+          <p>
+            I'm a full stack software engineer trained in JavaScript, React,
+            Ruby, Ruby on Rails, HTML5 and CSS3. I have had a lifelong
+            appreciation and fascination with computer programming. Experienced
+            in Ruby on Rails and JavaScript based programming. Thrive in roles
+            that involve time management and analytical thinking.
+          </p>
         </header>
 
         <aside>
@@ -186,7 +203,7 @@ function App() {
             />
             <RenderSection
               data={{
-                title: "Collin County Community College",
+                title: "Collin College",
                 description: "(AAS) - Math Concentration",
                 date: "09/2019 - 09/2021",
               }}

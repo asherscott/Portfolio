@@ -6,21 +6,33 @@ function RenderSection({ data }) {
 
   return (
     <section>
-      <header>
+      <header className="item-head">
         <h4>{title}</h4> {date && <span>{date}</span>}
       </header>
 
       {links && (
-        <ul>
-          <li>
-            <a>{links.github}</a>
-          </li>
-          <li>
-            <a>{links.website}</a>
-          </li>
-          <li>
-            <a>{links.demo}</a>
-          </li>
+        <ul className="nav-ul links-ul">
+          {links.github && (
+            <li>
+              <a href={links.github}>Github</a>
+            </li>
+          )}
+
+          {links.website && <span>|</span>}
+
+          {links.website && (
+            <li>
+              <a href={links.website}>Website</a>
+            </li>
+          )}
+
+          {links.demo && <span>|</span>}
+
+          {links.demo && (
+            <li>
+              <a href={links.demo}>Demo</a>
+            </li>
+          )}
         </ul>
       )}
 

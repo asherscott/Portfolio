@@ -1,22 +1,33 @@
 import "./App.css";
 import RenderSection from "./RenderSection";
+import { useState } from "react";
 
 function App() {
+  const [showProjects, setShowProjects] = useState(true);
+  const [showExperience, setShowExperience] = useState(true);
+  const [showEducation, setShowEducation] = useState(true);
+
   return (
     <div className="wrapper">
       <nav>
-        <ul>
+        <ul className="nav-ul">
           <li>
             <a>Home</a>
           </li>
           <li>
-            <a>Projects</a>
+            <a href="#projects" onClick={() => setShowProjects(true)}>
+              Projects
+            </a>
           </li>
           <li>
-            <a>Experience</a>
+            <a href="#experience" onClick={() => setShowExperience(true)}>
+              Experience
+            </a>
           </li>
           <li>
-            <a>Education</a>
+            <a href="#education" onClick={() => setShowEducation(true)}>
+              Education
+            </a>
           </li>
           <li>
             <a>Settings</a>
@@ -26,15 +37,16 @@ function App() {
 
       <main>
         <header>
-          <div>
-            <img />
-            <p>social media links</p>
+          <div className="profile-pic">
+            <img src="./profile-pic.png" />
+            <span>social media links</span>
           </div>
-          <section>
-            <h2>Hey, I'm Asher</h2>
+
+          <section className="main-section">
+            <h2>Hey, I'm Asher.</h2>
             <h1>Software Engineer</h1>
             <p>
-              I am a full stack software engineer trained in JavaScript, React,
+              I'm a full stack software engineer trained in JavaScript, React,
               Ruby, Ruby on Rails, HTML5 and CSS3. I have had a lifelong
               appreciation and fascination with computer programming.
               Experienced in Ruby on Rails and JavaScript based programming.
@@ -45,8 +57,7 @@ function App() {
         </header>
 
         <aside>
-          <h4>Skills</h4>
-          <ul>
+          <ul className="nav-ul">
             <li>JavaScript</li>
             <span>|</span>
             <li>React.js</li>
@@ -64,88 +75,128 @@ function App() {
         </aside>
 
         <article>
-          <h3>Technical Projects</h3>
-          <RenderSection
-            data={{
-              title: "Project 1",
-              links: {
-                github: "github",
-                website: "website",
-                demo: "demo",
-              },
-              description: "description",
-              listItems: ["item 1", "item 2", "item 3", "item 4"],
-            }}
-          />
-          <RenderSection
-            data={{
-              title: "Project 1",
-              links: {
-                github: "github",
-                website: "website",
-                demo: "demo",
-              },
-              description: "description",
-              listItems: ["item 1", "item 2", "item 3", "item 4"],
-            }}
-          />
-          <RenderSection
-            data={{
-              title: "Project 1",
-              links: {
-                github: "github",
-                website: "website",
-                demo: "demo",
-              },
-              description: "description",
-              listItems: ["item 1", "item 2", "item 3", "item 4"],
-            }}
-          />
+          <h3 id="projects" onClick={() => setShowProjects(!showProjects)}>
+            Technical Projects
+          </h3>
+
+          <div className={showProjects ? "sections display" : "sections"}>
+            <RenderSection
+              data={{
+                title: "Finance Tracker",
+                links: {
+                  github: "https://github.com/asherscott/finance-tracker",
+                  website: "https://asher-scott-finance-tracker.herokuapp.com/",
+                },
+                description:
+                  "A personal finance tracker to design a budget and track daily income and expenses.",
+                listItems: [
+                  "Applied BCrypt and Active Record to ensure security of user information.",
+                  "Constructed Ruby on Rails backend utilizing the Model View Controller pattern.",
+                  "Designed and constructed React frontend to provide an excellent user experience.",
+                  "Utilized React-Google-Charts to display budget, cash flow, and net worth information to the user.",
+                ],
+              }}
+            />
+            <RenderSection
+              data={{
+                title: "The Game Corner",
+                links: {
+                  github:
+                    "https://github.com/asherscott/The-Game-Corner-frontend",
+                  demo: "https://www.youtube.com/watch?v=t605X_9GFsk",
+                },
+                description:
+                  "A video game catalog where users can browse different game information and leave reviews.",
+                listItems: [
+                  "Modeled, rendered, and edited a 3D animation using Blender for the home page background.",
+                  "Utilized Ruby, ActiveRecord, and Sinatra to create a backend to store game and review information.",
+                  "Constructed React frontend that includes the home, game list, game instance tab, and user tab.",
+                  "Utilized React-Stars to create an in-depth review section.",
+                ],
+              }}
+            />
+            <RenderSection
+              data={{
+                title: "Word Muncher",
+                links: {
+                  github: "https://github.com/asherscott/Word-Muncher",
+                  website: "https://asherscott.github.io/Word-Muncher/",
+                  demo: "https://www.youtube.com/watch?v=LPuwrxYA51M",
+                },
+                description:
+                  "A reimagination of the classic snake game where users collect letters to spell words.",
+                listItems: [
+                  "Utilized json-server to mimic database operations in order to let users choose between built-in word lists.",
+                  "Utilized Words API to generate a word list of synonyms from user input.",
+                  "Configured behind the scene logic of the game mechanics.",
+                  "Constructed JavaScript frontend utilizing the Document Oriented Model.",
+                ],
+              }}
+            />
+          </div>
         </article>
 
         <article>
-          <h3>Experience</h3>
+          <h3
+            id="experience"
+            onClick={() => setShowExperience(!showExperience)}
+          >
+            Experience
+          </h3>
 
-          <RenderSection
-            data={{
-              title: "Experience 1",
-              description: "description",
-              date: "02/2021 - 02/2022",
-              listItems: ["item 1", "item 2"],
-            }}
-          />
-          <RenderSection
-            data={{
-              title: "Experience 2",
-              description: "description",
-              date: "02/2021 - 02/2022",
-              listItems: ["item 1", "item 2"],
-            }}
-          />
+          <div className={showExperience ? "sections display" : "sections"}>
+            <RenderSection
+              data={{
+                title: "Pizza Hut",
+                description: "Delivery Driver",
+                date: "02/2021 - 02/2022",
+                listItems: [
+                  "Delivered goods to customers with a perfect driving record.",
+                  "Provided excellent customer experience, managed inventory stock, and ensured the quality of orders.",
+                ],
+              }}
+            />
+            <RenderSection
+              data={{
+                title: "Which Wich",
+                description: "Shift Leader",
+                date: "09/2017 - 02/2019",
+                listItems: [
+                  "Communicated with customers and used POS systems to handle transactions.",
+                  "Managed crew members, handled opening and closing duties, and ensured the security of the store.",
+                ],
+              }}
+            />
+          </div>
         </article>
 
         <article>
-          <h3>Education</h3>
+          <h3 id="education" onClick={() => setShowEducation(!showEducation)}>
+            Education
+          </h3>
 
-          <RenderSection
-            data={{
-              title: "Education 1",
-              description: "description",
-              date: "02/2021 - 02/2022",
-            }}
-          />
-          <RenderSection
-            data={{
-              title: "Education 2",
-              description: "description",
-              date: "02/2021 - 02/2022",
-            }}
-          />
+          <div className={showEducation ? "sections display" : "sections"}>
+            <RenderSection
+              data={{
+                title: "Flatiron School",
+                description:
+                  "Software Engineering Certification - Full Stack, Ruby on Rails and JavaScript",
+                date: "01/2022 - 06/2022",
+              }}
+            />
+            <RenderSection
+              data={{
+                title: "Collin County Community College",
+                description: "(AAS) - Math Concentration",
+                date: "09/2019 - 09/2021",
+              }}
+            />
+          </div>
         </article>
       </main>
 
       <footer>
-        <ul>
+        <ul className="nav-ul">
           <li>
             <a>linkedin</a>
           </li>

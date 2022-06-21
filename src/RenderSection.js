@@ -11,7 +11,7 @@ function RenderSection({ data }) {
       </header>
 
       {links && (
-        <ul className="nav-ul links-ul">
+        <ul className="links-ul">
           {links.github && (
             <li>
               <a href={links.github}>Github</a>

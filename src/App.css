@@ -34,7 +34,9 @@ img {
   width: 150px;
 }
 
-main {
+main,
+.nav-ul,
+.links-ul {
   width: 80%;
   min-width: 750px;
   max-width: 1250px;
@@ -48,11 +50,8 @@ aside {
   justify-content: center;
 }
 
-.nav-ul {
-  width: 80%;
-  min-width: 750px;
-  max-width: 1250px;
-
+.nav-ul,
+.links-ul {
   display: flex;
   justify-content: space-between;
   list-style: none;
@@ -134,4 +133,20 @@ nav {
 
 main {
   margin-bottom: 10rem;
+}
+
+section {
+  margin-bottom: 3rem;
+}
+
+article {
+  margin-bottom: 5rem;
+}
+
+@media screen and (max-width: 800px) {
+  main,
+  .nav-ul {
+    min-width: 0;
+    width: 96%;
+  }
 }

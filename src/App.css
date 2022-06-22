@@ -1,3 +1,7 @@
+/* ############################################
+  GENERAL
+############################################ */
+
 :root {
   --red: #dc3522;
   --dark-red: #932317;
@@ -25,8 +29,9 @@ aside,
 .item-head,
 .profile-pic,
 .main-section,
-.nav-wrap,
-.svgs-ul {
+.foot-wrap,
+.svgs-ul,
+.theme-btn {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -49,41 +54,10 @@ a:hover,
   color: white;
 }
 
-a {
-  transition: 0.3s;
-  text-decoration: none;
-}
-
-.links-ul a:hover {
-  text-decoration: underline;
-}
-
-.small-header {
-  display: none;
-  flex-direction: column;
-}
-
-.small-title {
-  flex-direction: column;
-  align-items: flex-start;
-  margin-left: 1rem;
-}
-
-img {
-  width: 150px;
-  border: 10px solid var(--darker);
-  border-radius: 50%;
-  margin: 0 0 1rem 0;
-}
-
-.large-header {
-  margin: 1rem 0 0 0;
-}
-
 main,
 .nav-ul,
 .links-ul,
-.nav-wrap,
+.foot-wrap,
 .main-nav > div {
   width: 80%;
   min-width: 700px;
@@ -94,6 +68,41 @@ nav,
 footer,
 aside {
   width: 100%;
+}
+
+h1,
+h2,
+h4,
+.svgs-ul {
+  margin: 0;
+}
+
+html {
+  background-color: var(--dark);
+}
+
+footer,
+nav {
+  background-color: var(--darker);
+}
+
+main {
+  flex-grow: 1;
+}
+
+.theme-btn:hover svg,
+a:hover svg,
+h3:hover svg {
+  fill: white;
+}
+
+/* ############################################
+  NAV
+############################################ */
+a,
+svg {
+  transition: 0.3s;
+  text-decoration: none;
 }
 
 .main-nav > div {
@@ -129,8 +138,41 @@ aside span,
   margin: 0 0.5rem;
 }
 
-.item-head {
-  justify-content: space-between;
+.theme-btn {
+  cursor: pointer;
+}
+
+.theme-btn:hover svg {
+  transform: rotate(90deg);
+}
+
+.svgs-ul li {
+  margin: 0 1rem;
+}
+
+/* ############################################
+  HEADER
+############################################ */
+.small-header {
+  display: none;
+  flex-direction: column;
+}
+
+.small-title {
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 1rem;
+}
+
+img {
+  width: 150px;
+  border: 10px solid var(--darker);
+  border-radius: 50%;
+  margin: 0 0 1rem 0;
+}
+
+.large-header {
+  margin: 1rem 0 0 0;
 }
 
 .profile-pic {
@@ -143,34 +185,20 @@ aside span,
   margin: 0 0 0 1rem;
 }
 
-h1,
-h2,
-h4 {
-  margin: 0;
+/* ############################################
+  BODY
+############################################ */
+.links-ul a:hover {
+  text-decoration: underline;
+}
+
+.item-head {
+  justify-content: space-between;
 }
 
 h3 {
   cursor: pointer;
   border-bottom: 1px solid white;
-}
-
-h5 {
-  margin: 0 0 0.3rem 0;
-  padding-bottom: 0.3rem;
-  border-bottom: 1px solid white;
-}
-
-html {
-  background-color: var(--dark);
-}
-
-footer,
-nav {
-  background-color: var(--darker);
-}
-
-main {
-  flex-grow: 1;
 }
 
 .sections {
@@ -189,7 +217,33 @@ article {
   margin-bottom: 5rem;
 }
 
-.nav-wrap {
+.arrow-in svg {
+  transform: rotate(180deg);
+}
+
+.svg-span {
+  margin: 0 0 0 0.5rem;
+}
+
+aside {
+  margin: 2rem 0;
+}
+
+h4 {
+  font-size: large;
+}
+
+/* ############################################
+  FOOTER
+############################################ */
+
+h5 {
+  margin: 0 0 0.3rem 0;
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid white;
+}
+
+.foot-wrap {
   justify-content: space-around;
   align-items: flex-start;
   margin: 2rem 0;
@@ -207,18 +261,14 @@ article {
   margin-top: 0;
 }
 
-.svgs-ul li {
-  margin: 0 1rem;
-}
-
-.svgs-ul {
-  margin: 0;
-}
+/* ############################################
+  MEDIA
+############################################ */
 
 @media screen and (max-width: 750px) {
   main,
   .nav-ul,
-  .nav-wrap,
+  .foot-wrap,
   .main-nav > div {
     min-width: 0;
     width: 96%;

@@ -6,6 +6,7 @@ function App() {
   const [showProjects, setShowProjects] = useState(true);
   const [showExperience, setShowExperience] = useState(true);
   const [showEducation, setShowEducation] = useState(true);
+  const [darkTheme, setDarkTheme] = useState(true);
 
   return (
     <div className="wrapper">
@@ -26,6 +27,31 @@ function App() {
               <a href="#education" onClick={() => setShowEducation(true)}>
                 Education
               </a>
+            </li>
+            <li onClick={() => setDarkTheme(!darkTheme)} className="theme-btn">
+              {!darkTheme ? (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  fill="currentColor"
+                  className="bi bi-sun"
+                  viewBox="0 0 16 16"
+                >
+                  <path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z" />
+                </svg>
+              ) : (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  fill="currentColor"
+                  className="bi bi-sun-fill"
+                  viewBox="0 0 16 16"
+                >
+                  <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z" />
+                </svg>
+              )}
             </li>
           </ul>
         </div>
@@ -102,7 +128,7 @@ function App() {
           </p>
         </header>
 
-        <aside>
+        <aside className="skills">
           <ul className="nav-ul">
             <li>JavaScript</li>
             <span>|</span>
@@ -120,9 +146,25 @@ function App() {
           </ul>
         </aside>
 
-        <article>
-          <h3 id="projects" onClick={() => setShowProjects(!showProjects)}>
+        <article id="projects">
+          <h3 onClick={() => setShowProjects(!showProjects)}>
             Technical Projects
+            <span
+              className={
+                showProjects ? "svg-span arrow-in" : "svg-span arrow-out"
+              }
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                className="bi bi-caret-right-fill"
+                viewBox="0 0 16 16"
+              >
+                <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
+              </svg>
+            </span>
           </h3>
 
           <div className={showProjects ? "sections display" : "sections"}>
@@ -132,6 +174,7 @@ function App() {
                 links: {
                   github: "https://github.com/asherscott/finance-tracker",
                   website: "https://asher-scott-finance-tracker.herokuapp.com/",
+                  demo: "https://www.youtube.com/watch?v=VvzOSbpJzIE",
                 },
                 description:
                   "A personal finance tracker to design a budget and track daily income and expenses.",
@@ -182,12 +225,25 @@ function App() {
           </div>
         </article>
 
-        <article>
-          <h3
-            id="experience"
-            onClick={() => setShowExperience(!showExperience)}
-          >
+        <article id="experience">
+          <h3 onClick={() => setShowExperience(!showExperience)}>
             Experience
+            <span
+              className={
+                showExperience ? "svg-span arrow-in" : "svg-span arrow-out"
+              }
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                className="bi bi-caret-right-fill"
+                viewBox="0 0 16 16"
+              >
+                <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
+              </svg>
+            </span>
           </h3>
 
           <div className={showExperience ? "sections display" : "sections"}>
@@ -216,9 +272,25 @@ function App() {
           </div>
         </article>
 
-        <article>
-          <h3 id="education" onClick={() => setShowEducation(!showEducation)}>
+        <article id="education">
+          <h3 onClick={() => setShowEducation(!showEducation)}>
             Education
+            <span
+              className={
+                showEducation ? "svg-span arrow-in" : "svg-span arrow-out"
+              }
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                className="bi bi-caret-right-fill"
+                viewBox="0 0 16 16"
+              >
+                <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
+              </svg>
+            </span>
           </h3>
 
           <div className={showEducation ? "sections display" : "sections"}>
@@ -242,7 +314,7 @@ function App() {
       </main>
 
       <footer>
-        <div className="nav-wrap">
+        <div className="foot-wrap">
           <nav className="foot-nav">
             <h5>PERSONAL</h5>
             <ul>

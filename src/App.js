@@ -9,27 +9,26 @@ function App() {
 
   return (
     <div className="wrapper">
-      <nav>
-        <ul className="nav-ul">
-          <li>
-            <a href="#projects" onClick={() => setShowProjects(true)}>
-              Projects
-            </a>
-          </li>
-          <li>
-            <a href="#experience" onClick={() => setShowExperience(true)}>
-              Experience
-            </a>
-          </li>
-          <li>
-            <a href="#education" onClick={() => setShowEducation(true)}>
-              Education
-            </a>
-          </li>
-          <li>
-            <a>Settings</a>
-          </li>
-        </ul>
+      <nav className="main-nav">
+        <div>
+          <ul className="nav-ul">
+            <li>
+              <a href="#projects" onClick={() => setShowProjects(true)}>
+                Projects
+              </a>
+            </li>
+            <li>
+              <a href="#experience" onClick={() => setShowExperience(true)}>
+                Experience
+              </a>
+            </li>
+            <li>
+              <a href="#education" onClick={() => setShowEducation(true)}>
+                Education
+              </a>
+            </li>
+          </ul>
+        </div>
       </nav>
 
       <main>
@@ -213,24 +212,42 @@ function App() {
       </main>
 
       <footer>
-        <ul className="nav-ul">
-          <li>
-            <a>linkedin</a>
-          </li>
-          <li>
-            <a>github</a>
-          </li>
-          <li>
-            <a>blog</a>
-          </li>
-          <li>
-            <a>github specific</a>
-          </li>
-          <li>
-            <a>other</a>
-          </li>
-          <li>email</li>
-        </ul>
+        <div className="nav-wrap">
+          <nav className="foot-nav">
+            <h5>PERSONAL</h5>
+            <ul>
+              <li>
+                <a href="http://www.linkedin.com/in/asher-j-scott">Linkedin</a>
+              </li>
+              <li>
+                <a href="https://github.com/asherscott">Github</a>
+              </li>
+              <li>
+                <a href="mailto: asher.scott6@gmail.com">Email</a>
+              </li>
+              <li>
+                <a href="./Asher_Scott.pdf" download="Asher_Scott">
+                  Resume
+                </a>
+              </li>
+              <li>
+                <a href="https://dev.to/asherscott">Dev.to</a>
+              </li>
+            </ul>
+          </nav>
+
+          <nav className="foot-nav">
+            <h5>PORTFOLIO</h5>
+            <ul>
+              <li>
+                <a href="index.html">Website</a>
+              </li>
+              <li>
+                <a href="https://github.com/asherscott/Portfolio">Github</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
       </footer>
     </div>
   );

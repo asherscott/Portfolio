@@ -1,58 +1,88 @@
 :root {
-  --white: rgb(252, 255, 245);
-  --tan: rgb(209, 219, 189);
-  --tan-blue: rgb(145, 170, 157);
-  --blue: rgb(62, 96, 111);
-  --dark-blue: rgb(25, 52, 65);
-  --darker-blue: rgb(15, 31, 39);
-  --orange: rgb(223, 154, 51);
+  --red: #dc3522;
+  --dark-red: #932317;
+  --grey: #75757c;
+  --dark: rgb(30, 30, 32);
+  --darker: rgb(24, 24, 26);
 }
 
 * {
   box-sizing: border-box;
-  color: white;
-
   scroll-behavior: smooth;
+  color: var(--grey);
+}
+
+.wrapper,
+.large-header,
+header,
+.small-title,
+nav,
+footer,
+aside,
+.main-nav > div,
+.nav-ul,
+.links-ul,
+.item-head,
+.profile-pic,
+.main-section,
+.nav-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .wrapper {
-  display: flex;
   flex-direction: column;
-  align-items: center;
   min-height: 100vh;
 }
 
-.large-header {
-  display: flex;
+h1,
+h2,
+h3,
+h4,
+h5,
+aside li,
+a:hover,
+.links-ul a {
+  color: white;
 }
 
-.small-title {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+a {
+  transition: 0.3s;
+  text-decoration: none;
+}
+
+.links-ul a:hover {
+  text-decoration: underline;
 }
 
 .small-header {
   display: none;
-
   flex-direction: column;
 }
 
-footer {
-  margin-top: auto;
-}
-
-header {
-  display: flex;
+.small-title {
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 1rem;
 }
 
 img {
   width: 150px;
+  border: 10px solid var(--darker);
+  border-radius: 50%;
+  margin: 0 0 1rem 0;
+}
+
+.large-header {
+  margin: 1rem 0 0 0;
 }
 
 main,
 .nav-ul,
-.links-ul {
+.links-ul,
+.nav-wrap,
+.main-nav > div {
   width: 80%;
   min-width: 700px;
   max-width: 1250px;
@@ -62,26 +92,32 @@ nav,
 footer,
 aside {
   width: 100%;
-  display: flex;
-  justify-content: center;
+}
+
+.main-nav > div {
+  justify-content: flex-end;
+}
+
+.main-nav .nav-ul,
+.links-ul {
+  width: fit-content;
+  min-width: 0;
+}
+
+.main-nav .nav-ul {
+  margin: 2rem 0;
 }
 
 .nav-ul,
 .links-ul {
-  display: flex;
   justify-content: space-between;
   list-style: none;
   padding: 0;
 }
 
-aside > .nav-ul {
+aside .nav-ul {
   width: 100%;
   justify-content: space-around;
-}
-
-.links-ul {
-  width: fit-content;
-  min-width: auto;
 }
 
 .links-ul > span,
@@ -91,32 +127,23 @@ aside span,
 }
 
 .item-head {
-  display: flex;
-  align-items: center;
   justify-content: space-between;
 }
 
-h4 {
-  margin: 0;
-}
-
 .profile-pic {
-  display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-img {
-  border: 10px solid var(--darker-blue);
-  margin: 1rem 1rem 1rem 0;
-  border-radius: 50%;
 }
 
 .main-section {
-  display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: flex-start;
+  margin: 0 0 0 1rem;
+}
+
+h1,
+h2,
+h4 {
+  margin: 0;
 }
 
 h3 {
@@ -124,21 +151,19 @@ h3 {
   border-bottom: 1px solid white;
 }
 
-h2 {
-  margin-bottom: 0;
-}
-
-h1 {
-  margin-top: 0;
+h5 {
+  margin: 0 0 0.3rem 0;
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid white;
 }
 
 html {
-  background-color: var(--dark-blue);
+  background-color: var(--dark);
 }
 
 footer,
 nav {
-  background-color: var(--darker-blue);
+  background-color: var(--darker);
 }
 
 .sections {
@@ -157,12 +182,39 @@ article {
   margin-bottom: 5rem;
 }
 
+.nav-wrap {
+  justify-content: space-around;
+  align-items: flex-start;
+  margin: 2rem 0;
+}
+
+.foot-nav {
+  width: auto;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.foot-nav:last-child * {
+  text-align: right;
+}
+
+.foot-nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 0;
+}
+
 @media screen and (max-width: 750px) {
   main,
-  .nav-ul {
+  .nav-ul,
+  .nav-wrap,
+  .main-nav > div {
     min-width: 0;
     width: 96%;
-    margin: 0 0.1rem;
+  }
+
+  .nav-ul {
+    margin: 1rem 0.1rem;
   }
 
   .large-header {
@@ -175,14 +227,15 @@ article {
 
   .main-section {
     flex-direction: row;
-    margin-top: 1rem;
+    align-items: center;
+    margin: 1rem 0 0 0;
   }
 
   img {
     width: 15vw;
     min-width: 75px;
     border-width: 0.5rem;
-    margin: 0 1rem 0 0;
+    margin: 0;
   }
 
   aside {

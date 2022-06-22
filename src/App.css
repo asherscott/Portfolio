@@ -33,6 +33,7 @@ aside,
 
 .wrapper {
   flex-direction: column;
+  justify-content: flex-start;
   min-height: 100vh;
 }
 
@@ -164,6 +165,10 @@ html {
 footer,
 nav {
   background-color: var(--darker);
+}
+
+main {
+  flex-grow: 1;
 }
 
 .sections {

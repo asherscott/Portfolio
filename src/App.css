@@ -25,7 +25,8 @@ aside,
 .item-head,
 .profile-pic,
 .main-section,
-.nav-wrap {
+.nav-wrap,
+.svgs-ul {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -110,7 +111,8 @@ aside {
 }
 
 .nav-ul,
-.links-ul {
+.links-ul,
+.svgs-ul {
   justify-content: space-between;
   list-style: none;
   padding: 0;
@@ -199,14 +201,18 @@ article {
   justify-content: flex-start;
 }
 
-.foot-nav:last-child * {
-  text-align: right;
-}
-
 .foot-nav ul {
   list-style-type: none;
   padding: 0;
   margin-top: 0;
+}
+
+.svgs-ul li {
+  margin: 0 1rem;
+}
+
+.svgs-ul {
+  margin: 0;
 }
 
 @media screen and (max-width: 750px) {

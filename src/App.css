@@ -303,3 +303,21 @@ h5 {
     display: none;
   }
 }
+
+@media screen and (max-width: 320px) {
+  .main-nav .nav-ul {
+    flex-flow: column wrap;
+    align-items: flex-start;
+    position: relative;
+    width: 100%;
+  }
+
+  .main-nav div {
+    justify-content: flex-start;
+  }
+
+  .theme-btn {
+    position: absolute;
+    right: 0;
+  }
+}

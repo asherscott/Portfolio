@@ -1,4 +1,4 @@
-function RenderSection({ data }) {
+function RenderSection({ data, darkTheme }) {
   const { title, links, description, date, listItems } = data;
 
   const renderList = () =>
@@ -7,14 +7,17 @@ function RenderSection({ data }) {
   return (
     <section>
       <header className="item-head">
-        <h4>{title}</h4> {date && <span>{date}</span>}
+        <h4 className={darkTheme ? "" : "light"}>{title}</h4>
+        {date && <span>{date}</span>}
       </header>
 
       {links && (
         <ul className="links-ul">
           {links.github && (
             <li>
-              <a href={links.github}>Github</a>
+              <a href={links.github} className={darkTheme ? "" : "light"}>
+                Github
+              </a>
             </li>
           )}
 
@@ -22,7 +25,9 @@ function RenderSection({ data }) {
 
           {links.website && (
             <li>
-              <a href={links.website}>Website</a>
+              <a href={links.website} className={darkTheme ? "" : "light"}>
+                Website
+              </a>
             </li>
           )}
 
@@ -30,7 +35,9 @@ function RenderSection({ data }) {
 
           {links.demo && (
             <li>
-              <a href={links.demo}>Demo</a>
+              <a href={links.demo} className={darkTheme ? "" : "light"}>
+                Demo
+              </a>
             </li>
           )}
         </ul>

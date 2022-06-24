@@ -5,6 +5,8 @@
 :root {
   --red: #dc3522;
   --dark-red: #932317;
+  --white: rgb(240, 240, 240);
+  --light-grey: rgb(225, 225, 225);
   --grey: #75757c;
   --dark: rgb(30, 30, 32);
   --darker: rgb(24, 24, 26);
@@ -15,6 +17,77 @@
   scroll-behavior: smooth;
   color: var(--grey);
 }
+
+svg {
+  transition: 0.3s;
+}
+
+/* DARK MODE */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+aside li,
+a:hover,
+.links-ul a {
+  color: var(--white);
+  transition: 0.3s;
+}
+
+.theme-btn:hover svg,
+a:hover svg,
+h3:hover svg {
+  fill: var(--white);
+}
+
+.wrapper {
+  background-color: var(--dark);
+  transition: 0.3s;
+}
+
+footer,
+nav {
+  background-color: var(--darker);
+  transition: 0.3s;
+}
+
+/* LIGHT MODE */
+
+.light *,
+.links-ul a.light {
+  color: var(--grey);
+  border-color: var(--darker);
+}
+
+h1.light,
+h2.light,
+h3.light,
+h4.light,
+h5.light,
+aside.light li,
+a.light:hover,
+.links-ul a.light {
+  color: var(--darker);
+}
+
+.theme-btn:hover svg.light,
+a:hover svg.light,
+h3:hover svg.light {
+  fill: var(--darker);
+}
+
+.wrapper.light {
+  background-color: white;
+}
+
+footer.light,
+nav.light {
+  background-color: var(--white);
+}
+
+/* ################# */
 
 .wrapper,
 .large-header,
@@ -43,17 +116,6 @@ aside,
   min-height: 100vh;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-aside li,
-a:hover,
-.links-ul a {
-  color: white;
-}
-
 main,
 .nav-ul,
 .links-ul,
@@ -77,31 +139,14 @@ h4,
   margin: 0;
 }
 
-html {
-  background-color: var(--dark);
-}
-
-footer,
-nav {
-  background-color: var(--darker);
-}
-
 main {
   flex-grow: 1;
-}
-
-.theme-btn:hover svg,
-a:hover svg,
-h3:hover svg {
-  fill: white;
 }
 
 /* ############################################
   NAV
 ############################################ */
-a,
-svg {
-  transition: 0.3s;
+a {
   text-decoration: none;
 }
 

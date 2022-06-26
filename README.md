@@ -62,3 +62,21 @@ Now in your terminal run `npm run deploy`.
 4. Setup source to gh-pages branch
 
 Once you've successfully deployed, open your GitHub code repository and click on Settings tab >> Pages >> then change branch to gh-pages.
+
+## Creative Process
+
+
+
+
+<table>
+  <tr>
+    <td>Mockup</td>
+     <td>Dark Mode</td>
+     <td>Light Mode</td>
+  </tr>
+  <tr>
+    <td align="center" width="33%"><img src="https://user-images.githubusercontent.com/97623529/175828782-12ce03e3-b2c2-4682-9670-97f19d66c63c.png" alt="Portfolio  Mockup" /></td>
+    <td align="center"><img src="https://user-images.githubusercontent.com/97623529/175828833-6fbd197b-9ce1-4550-9925-a02883075e6d.png" alt="Portfolio  Dark" /></td>
+     <td align="center"><img src="https://user-images.githubusercontent.com/97623529/175828845-f7c5386f-17f2-4342-a788-1a06f62da137.png" alt="Portfolio  Light" /></td>
+  </tr>
+ </table>
